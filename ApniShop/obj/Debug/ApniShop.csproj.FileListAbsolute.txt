@@ -80,3 +80,15 @@ C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\Microsoft.Owin.Security.Mic
 C:\Workspace\personalWorkspace\ApniShop\ApniShop\obj\Debug\ApniShop.csprojResolveAssemblyReference.cache
 C:\Workspace\personalWorkspace\ApniShop\ApniShop\obj\Debug\ApniShop.dll
 C:\Workspace\personalWorkspace\ApniShop\ApniShop\obj\Debug\ApniShop.pdb
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\FireSharp.dll
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\Microsoft.Threading.Tasks.dll
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\Microsoft.Threading.Tasks.Extensions.dll
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\System.Net.Http.Extensions.dll
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\System.Net.Http.Primitives.dll
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\Microsoft.Threading.Tasks.xml
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\Microsoft.Threading.Tasks.Extensions.xml
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\System.Net.Http.Extensions.xml
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\bin\System.Net.Http.Primitives.xml
+C:\Workspace\personalWorkspace\ApniShop\ApniShop\obj\Debug\ApniShop.csproj.App.config
