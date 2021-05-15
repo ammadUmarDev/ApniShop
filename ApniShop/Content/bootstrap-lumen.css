@@ -35,6 +35,10 @@ section,
 summary {
   display: block;
 }
+
+
+
+
 audio,
 canvas,
 progress,
@@ -6904,4 +6908,13 @@ a.list-group-item-danger.active:focus {
 }
 .popover {
   color: #2c3e50;
+}
+
+footer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
