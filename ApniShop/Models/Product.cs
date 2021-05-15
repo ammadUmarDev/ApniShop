@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json.Linq;
 
 namespace ApniShop.Models
 {
@@ -13,5 +14,10 @@ namespace ApniShop.Models
         public int Availability { get; set; }
         public int Demand { get; set; }
         public int Rating { get; set; }
+
+        public static explicit operator JProperty(Product v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

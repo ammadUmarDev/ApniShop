@@ -2,6 +2,8 @@
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +24,16 @@ namespace ApniShop.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            return View();
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Products");
+            //System.Diagnostics.Debug.WriteLine(response.Body);
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var products = new List<Models.Product>();
+            foreach (var product in data)
+            {
+                products.Add(JsonConvert.DeserializeObject<Models.Product>(((JProperty)product).Value.ToString()));
+            }
+            return View(products);
         }
 
         [HttpGet]
@@ -53,8 +64,30 @@ namespace ApniShop.Controllers
             var data = product;
             PushResponse response = client.Push("Products/", data);
             data.ID = response.Result.name;
-            SetResponse setResponse = client.Set("Products" + data.ID, data);
+            SetResponse setResponse = client.Set("Products/" + data.ID, data);
 
+        }
+
+        [HttpGet]
+        public ActionResult Detail(string id)
+        {
+
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Products/" + id);
+            //System.Diagnostics.Debug.WriteLine(response.Body);
+            Models.Product data = JsonConvert.DeserializeObject<Models.Product>(response.Body);
+            return View(data);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(string id)
+        {
+
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Products/" + id);
+            //System.Diagnostics.Debug.WriteLine(response.Body);
+            Models.Product data = JsonConvert.DeserializeObject<Models.Product>(response.Body);
+            return View(data);
         }
     }
 }
