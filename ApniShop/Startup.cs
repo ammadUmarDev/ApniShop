@@ -1,10 +1,10 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(ApniShop.Startup))]
-namespace ApniShop
+[assembly: OwinStartupAttribute(typeof(ApniShop.App_Start.StartUp))]
+namespace ApniShop.App_Start
 {
-    public partial class Startup
+    public partial class StartUp
     {
         public void Configuration(IAppBuilder app)
         {

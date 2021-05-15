@@ -29,5 +29,7 @@ namespace ApniShop.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<ApniShop.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
