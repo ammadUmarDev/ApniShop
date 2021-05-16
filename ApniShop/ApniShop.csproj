@@ -300,6 +300,8 @@
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Demand.cshtml" />
+    <Content Include="Views\Product\Rate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

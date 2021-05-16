@@ -110,5 +110,49 @@ namespace ApniShop.Controllers
             //System.Diagnostics.Debug.WriteLine(response.Body);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Demand(string id)
+        {
+
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Products/" + id);
+            //System.Diagnostics.Debug.WriteLine(response.Body);
+            Models.Product data = JsonConvert.DeserializeObject<Models.Product>(response.Body);
+            return View(data);
+        }
+
+        [HttpPost]
+        public ActionResult Demand(Models.Product product)
+        {
+
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Set("Products/" + product.ID, product);
+            //System.Diagnostics.Debug.WriteLine(response.Body);
+            Models.Product data = JsonConvert.DeserializeObject<Models.Product>(response.Body);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Rate(string id)
+        {
+
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Products/" + id);
+            //System.Diagnostics.Debug.WriteLine(response.Body);
+            Models.Product data = JsonConvert.DeserializeObject<Models.Product>(response.Body);
+            return View(data);
+        }
+
+        [HttpPost]
+        public ActionResult Rate(Models.Product product)
+        {
+
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Set("Products/" + product.ID, product);
+            //System.Diagnostics.Debug.WriteLine(response.Body);
+            Models.Product data = JsonConvert.DeserializeObject<Models.Product>(response.Body);
+            return RedirectToAction("Index");
+        }
     }
 }
