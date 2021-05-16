@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ApniShop.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Availability)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Demand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Availability)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Demand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Detail", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }) |
+            @Html.ActionLink("Demand", "Demand", new { id = item.ID }) |
+            @Html.ActionLink("Rating", "Rate", new { id = item.ID }) 
+        </td>
+    </tr>
+}
+
+</table>
