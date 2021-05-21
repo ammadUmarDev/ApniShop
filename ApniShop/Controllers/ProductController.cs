@@ -125,10 +125,11 @@ namespace ApniShop.Controllers
         [HttpPost]
         public ActionResult Demand(Models.Product product)
         {
-
             client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = client.Set("Products/" + product.ID, product);
-            //System.Diagnostics.Debug.WriteLine(response.Body);
+            FirebaseResponse response = client.Get("Products/" + product.ID);
+            Models.Product getProduct = JsonConvert.DeserializeObject<Models.Product>(response.Body);
+            getProduct.Demand = product.Demand + 1;
+            FirebaseResponse updateResponse = client.Set("Products/" + product.ID, getProduct);
             Models.Product data = JsonConvert.DeserializeObject<Models.Product>(response.Body);
             return RedirectToAction("Index");
         }
@@ -147,10 +148,11 @@ namespace ApniShop.Controllers
         [HttpPost]
         public ActionResult Rate(Models.Product product)
         {
-
             client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = client.Set("Products/" + product.ID, product);
-            //System.Diagnostics.Debug.WriteLine(response.Body);
+            FirebaseResponse response = client.Get("Products/" + product.ID);
+            Models.Product getProduct = JsonConvert.DeserializeObject<Models.Product>(response.Body);
+            getProduct.Rate = product.Rate + 1;
+            FirebaseResponse updateResponse = client.Set("Products/" + product.ID, getProduct);
             Models.Product data = JsonConvert.DeserializeObject<Models.Product>(response.Body);
             return RedirectToAction("Index");
         }

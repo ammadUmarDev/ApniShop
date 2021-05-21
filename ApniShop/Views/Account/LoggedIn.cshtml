@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "LoggedIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Session["UserId"] != null)
+{
+    <h4>Hello @Session["Username"].ToString()</h4>
+    <h4>Welcome to Apni Shop</h4>
+}
+

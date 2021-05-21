@@ -14,6 +14,7 @@ namespace ApniShop.Models
         public int Availability { get; set; }
         public int Demand { get; set; }
         public int Rating { get; set; }
+        public int Rate { get; internal set; }
 
         public static explicit operator JProperty(Product v)
         {
